@@ -241,17 +241,17 @@ limitations under the License.
       </div>
 
       <div class="options price">
-        <h6>PRICE :
-          <!-- TODO: "Variable shirt prices" -->
-          $9.99
-        </h6>
+          <h6>価格:
+            <!-- Display the price of the selected shirt in the selected size if available. Otherwise, display the placeholder text '---'. -->
+            <span [text]="shirts[selected.sku].sizes[selectedSize] || '---'">---</span>
+          </h6>
       </div>
 
       <div class="options sizes">
         <h6>SIZE :</h6>
 
         <!-- TODO: "Variable shirt prices" -->
-        <amp-selector name="size">
+        <amp-selector name="size" on="select:AMP.setState({selectedSize: event.targetOption})">
           <table>
             <tr>
                 <!-- If 'XS' size is available for selected SKU, return empty string. Otherwise, return 'unavailable'. -->
