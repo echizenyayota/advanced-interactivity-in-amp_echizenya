@@ -254,23 +254,22 @@ limitations under the License.
         <amp-selector name="size">
           <table>
             <tr>
-              <!-- TODO: "Fetching available sizes for a shirt" -->
-              <td>
-                <div option="XS">XS</div>
-              </td>
-              <td>
-                <div option="S">S</div>
-              </td>
-              <!-- TODO: "Fetching available sizes for a shirt" -->
-              <td>
-                <div option="M">M</div>
-              </td>
-              <td>
-                <div option="L">L</div>
-              </td>
-              <td>
-                <div option="XL">XL</div>
-              </td>
+                <!-- If 'XS' size is available for selected SKU, return empty string. Otherwise, return 'unavailable'. -->
+                <td [class]="shirts[selected.sku].sizes['XS'] ? '' : 'unavailable'">
+                  <div option="XS">XS</div>
+                </td>
+                <td [class]="shirts[selected.sku].sizes['S'] ? '' : 'unavailable'">
+                  <div option="S">S</div>
+                </td>
+                <td [class]="shirts[selected.sku].sizes['M'] ? '' : 'unavailable'">
+                  <div option="M">M</div>
+                </td>
+                <td [class]="shirts[selected.sku].sizes['L'] ? '' : 'unavailable'">
+                  <div option="L">L</div>
+                </td>
+                <td [class]="shirts[selected.sku].sizes['XL'] ? '' : 'unavailable'">
+                  <div option="XL">XL</div>
+                </td>
             </tr>
           </table>
         </amp-selector>
