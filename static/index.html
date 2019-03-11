@@ -200,9 +200,9 @@ limitations under the License.
 
     <amp-carousel type="slides" layout="fixed-height" height=250 id="carousel" on="slideChange:AMP.setState({selected: {slide: event.index}})">
       <!-- TODO: "Changing images in amp-carousel" -->
-      <amp-img width=200 height=250 src="./shirts/black.jpg"></amp-img>
-      <amp-img width=300 height=375 src="./shirts/black.jpg"></amp-img>
-      <amp-img width=400 height=500 src="./shirts/black.jpg"></amp-img>
+      <amp-img width=200 height=250 src="./shirts/black.jpg" [src]="shirts[selected.sku].image"></amp-img>
+      <amp-img width=300 height=375 src="./shirts/black.jpg" [src]="shirts[selected.sku].image"></amp-img>
+      <amp-img width=400 height=500 src="./shirts/black.jpg" [src]="shirts[selected.sku].image"></amp-img>
     </amp-carousel>
 
     <!-- TODO: "Add a slide indicator" -->
