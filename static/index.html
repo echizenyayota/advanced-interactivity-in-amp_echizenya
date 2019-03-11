@@ -222,7 +222,7 @@ limitations under the License.
           Tip: <amp-selector> functions like an <input> element when nested in a <form>.
           @see https://www.ampproject.org/docs/reference/components/amp-form#inputs-and-fields
         -->
-        <amp-selector name="color">
+        <amp-selector name="color" on="select:AMP.setState({selected: {sku: event.targetOption}})">
           <table>
             <tr>
               <td><amp-img width=40 height=40 option="1001" src="./shirts/swatch/black.jpg" selected></amp-img></td>
