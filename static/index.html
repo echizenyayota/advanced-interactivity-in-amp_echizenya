@@ -167,9 +167,11 @@ limitations under the License.
 
     <!-- TODO: "Add a slide indicator" -->
     <p class="dots">
-      <span class="current"></span>
-      <span></span>
-      <span></span>
+      <!-- The <span> element corresponding to the current displayed slide
+           will have the 'current' CSS class. -->
+      <span [class]="selected.slide == 0 ? 'current' : ''" class="current"></span>
+      <span [class]="selected.slide == 1 ? 'current' : ''"></span>
+      <span [class]="selected.slide == 2 ? 'current' : ''"></span>
     </p>
 
     <form method="post" action-xhr="/shirts/addToCart" target="_top">
