@@ -286,9 +286,13 @@ limitations under the License.
       </div>
 
       <div class="options purchase">
-        <!-- TODO: "Conditionally enabled button" -->
-        <input type="submit" value="ADD TO CART"
-            class="mdl-button mdl-button--raised mdl-button--accent">
+            <!-- Disable the "ADD TO CART" button when:
+              1. There is no selected size, OR
+              2. The available sizes for the selected SKU haven't been fetched yet
+            -->
+          <input type="submit" value="ADD TO CART" disabled
+              class="mdl-button mdl-button--raised mdl-button--accent"
+              [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]">
       </div>
 
       <div submit-success>
