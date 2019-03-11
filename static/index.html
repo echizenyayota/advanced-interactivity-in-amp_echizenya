@@ -150,7 +150,7 @@ limitations under the License.
     </script>
   </amp-state>
   <!-- Available shirts. Maps unique string identifier to color and image URL string. -->
-  <amp-state id="shirts">
+  <amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
       <script type="application/json">
         {
           "1001": {
